@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Geoportal PostGIS / Supabase</title>
+
+  <!-- Leaflet -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
+  />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div id="app">
+
+    <!-- SIDEBAR -->
+    <aside id="sidebar">
+      <div class="sidebar-header">
+
+        <!-- LOGO -->
+        <div class="logo">
+          <img src="assets/logo.png" class="logo-img" alt="Logo Geoportal">
+          <div class="logo-text">
+            <h1>Geoportal</h1>
+            <p>Demo</p>
+          </div>
+        </div>
+
+        <button id="toggleSidebar" title="Mostrar/ocultar panel">⮜</button>
+      </div>
+
+      <div id="status" class="status info">
+        ⏳ Conectando con Supabase...
+      </div>
+
+      <section class="section">
+        <h2>Capas disponibles</h2>
+        <p class="section-help">
+          Activa las capas que quieras visualizar.
+        </p>
+
+        <button id="btnLimpiar" class="btn-clear">🧹 Limpiar mapa</button>
+
+        <div id="layers"></div>
+      </section>
+
+      <section class="section section-footer">
+        <h2>Detalles de vista</h2>
+        <p class="section-help small">
+          Haz clic en las capas para ver sus atributos.
+        </p>
+      </section>
+    </aside>
+
+    <!-- PANEL DE ATRIBUTOS -->
+    <div id="panelAtributos" class="panel-atributos oculto">
+      <div class="panel-header">
+        <h3>Detalles del elemento</h3>
+        <button id="cerrarPanel">✕</button>
+      </div>
+
+      <div id="tablaAtributos"></div>
+
+      <button id="exportarCSV" class="btn-exportar">📤 Exportar CSV</button>
+    </div>
+
+    <!-- MAPA -->
+    <main id="map-container">
+      <div id="map"></div>
+    </main>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>
